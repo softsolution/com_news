@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>
+    <module>
+        <id>mod_news</id>
+        <title>Последние новости</title>
+    </module>
+    <params>
+        <param type="number" name="newscount" title="Количество новостей" units="шт." default="5" />
+        <param type="flag" name="showdesc" title="Показывать анонсы" default="on" />
+        <param type="flag" name="showdate" title="Подробный вывод новостей" default="on" />
+        <param type="flag" name="showcom" title="Показывать число комментариев" default="on" />
+        <param type="flag" name="showrss" title="Показывать ссылку на RSS" default="on" />
+        <param type="flag" name="is_pag" title="Использовать пагинацию" default="on" />
+    </params>
+</backend>

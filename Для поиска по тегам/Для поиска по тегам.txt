@@ -1,0 +1,25 @@
+Для поиска по тегам добавить в файл
+ /core/lib_tags.php 
+
+добавить в функцию cmsTagItemLink после
+
+
+$link .= '<a href="/maps/'.$item['seolink'].'.html" class="tag_searchitem">'.$item['title'].'</a>';
+						}
+						break;
+
+/////////////////////////////////////////////////////////////////////
+//этот код
+                case 'news': $today = date("Y-m-d H:i:s");
+                                                $sql = "SELECT i.title as title, i.seolink as seolink FROM cms_news i
+                                                        WHERE i.id = '$item_id' AND i.published = 1 AND i.pubdate <= '$today' LIMIT 1";
+                                                $rs = $inDB->query($sql) ;
+                                                if ($inDB->num_rows($rs)){
+                                                        $item = $inDB->fetch_assoc($rs);
+                                                        $link = '<a href="/news/'.$item['seolink'].'.html" class="tag_searchitem">'.$item['title'].'</a>';
+                                                }
+                                                break;
+
+//или заменить на файлик из этой папки (актуально для InstantCMS 1.10.2)
+
+
